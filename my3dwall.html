@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3d照片墙</title>
+</head>
+<style>
+    *{
+        margin:0;
+        padding: 0;
+    }
+    :root{
+        height: 100%;
+    }
+    body{
+        height: 100%;
+        perspective: 1200px;
+    }
+    .wrapper{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 300px;
+        height: 400px;
+        transform: translate(-50%,-50%);
+        transform-style: preserve-3d;
+        animation: run 20s linear infinite;
+    }
+    .wrapper img{
+        width: 300px;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    img:nth-of-type(1){
+        transform: rotateY(45deg) translateZ(500px);
+
+    }
+    img:nth-of-type(2){
+        transform: rotateY(90deg) translateZ(500px);
+        
+    }
+    img:nth-of-type(3){
+        transform: rotateY(135deg) translateZ(500px);
+        
+    }
+    img:nth-of-type(4){
+        transform: rotateY(180deg) translateZ(500px);
+        
+    }
+    img:nth-of-type(5){
+        transform: rotateY(225deg) translateZ(500px);
+        
+    }
+    img:nth-of-type(6){
+        transform: rotateY(270deg) translateZ(500px);
+        
+    }
+    img:nth-of-type(7){
+        transform: rotateY(315deg) translateZ(500px);
+        
+    }
+    img:nth-of-type(8){
+        transform: rotateY(360deg) translateZ(500px);
+        
+    }
+    @keyframes run{
+        0%{
+            transform: translate(-50%,-50%) rotateY(0);
+        }
+        100%{
+            transform: translate(-50%,-50%) rotateY(360deg);
+        }
+    }
+</style>
+<body>
+    <div class="wrapper">
+        <img src="img/1.jpg" alt="">
+        <img src="img/2.jpg" alt="">
+        <img src="img/3.jpg" alt="">
+        <img src="img/4.jpg" alt="">
+        <img src="img/5.jpg" alt="">
+        <img src="img/6.jpg" alt="">
+        <img src="img/7.jpg" alt="">
+        <img src="img/8.jpg" alt="">
+    </div>
+    <script>
+        document.body.onmousemove = function(e){
+            document.body.style.perspectiveOrigin = `${e.pageX}px ${e.pageY}px`;
+        }
+    </script>
+</body>
+</html>

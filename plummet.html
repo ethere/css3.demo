@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>钟摆效果</title>
+</head>
+<style>
+    @keyframes run-hour{
+        0%{
+            transform: rotate(180deg);
+        }
+        100%{
+            transform: rotate(360deg);
+        }
+
+    }
+    @keyframes run-minute{
+        0%{
+            transform: rotate(180deg);
+        }
+        100%{
+            transform: rotate(540deg);
+        }
+    }
+    @keyframes run-second{
+        0%{
+            transform: rotate(180deg);
+        }
+        100%{
+            transform: rotate(540deg);
+        }
+    }
+
+    .clock{
+        background: url('./img/clock.png') no-repeat;
+        width: 520px;
+        height: 520px;
+        position: absolute;
+        left: calc(50% - 260px);
+        top: 100px;
+    }
+    .hour{
+        background: url('./img/hour.png') no-repeat;
+        width: 40px;
+        height: 150px;
+        position: absolute;
+        left: calc(50% - 20px);
+        top: 240px;
+        transform-origin: 16px 17px;
+        animation: run-minute 43200s forwards infinite;
+        transform: rotate(180deg);
+    }
+    .minute{
+        background: url('./img/minute.png') no-repeat;
+        width: 35px;
+        height: 220px;
+        position: absolute;
+        left: calc(50% - 19px);
+        top: 240px;
+        transform-origin: 16px 17px;
+        animation: run-minute 3600s forwards infinite;
+        transform: rotate(180deg);
+    }
+    .second{
+        background: url('./img/second.png') no-repeat;
+        width: 15px;
+        height: 250px;
+        position: absolute;
+        left: 250px;
+        top: 180px;
+        transform-origin: 7px 77px;
+        animation: run-second 60s steps(120,end) forwards infinite;
+        transform: rotate(180deg);
+    }
+</style>
+<body>
+    <div class="clock">
+        <div class="hour"></div>
+        <div class="minute"></div>
+        <div class="second"></div>
+    </div>
+</body>
+</html>

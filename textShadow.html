@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字体阴影</title>
+</head>
+<style>
+    body{
+        background-color: black;
+    }
+    .demo{
+        position: absolute;
+        left: calc(50% - 200px);
+        top: 100px;
+        width: 400px;
+        height:150px;
+        font-size: 100px;
+        background-image: url('./img/eye.jpeg');
+        background-position: -400px -50px;
+        background-repeat: no-repeat;
+        background-size: 400px 300px;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color:transparent;
+        transition: all 2s;
+        text-shadow: -5px -5px 3px rgba(255, 0, 255, .2),
+                     5px 5px 3px rgba(0, 255, 255, .2);
+    }
+    .demo:hover{
+        background-position: 0 -50px;
+    }
+</style>
+<body>
+    <div class="demo">死神来了</div>
+</body>
+</html>

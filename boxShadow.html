@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>box-shadow</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        background-color: black;
+        height: 2000px;
+    }
+    div{
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        border: 1px solid #fff;
+        background-color: transparent;
+        margin: 15px;
+    }
+    .demo3{
+        left: 100px;
+        top: 50px;
+        box-shadow: inset 0px 0px 10px #fff,
+        0px -5px 10px #f0f,
+        -5px 0px 10px #ff0,
+        5px 0px 10px #0ff,
+        0px 5px 10px #0ff;
+    }
+    .demo4{
+        color: #fff;
+        box-shadowleft: 300px;
+        top: 50px;
+        border-radius: 50%;
+        background-: 0px 0px 20px #fff,
+                    inset 0px 0px 10px #fff;
+    }
+    .demo5{
+        left: 500px;
+        top: 50px;
+        border-radius: 50%;
+        box-shadow: 0px 0px 15px #fff,
+                    inset 0px 0px 15px #fff,
+                    inset 10px 0px 35px #f0f,
+                    inset -10px 0px 35px #0ff,
+                    inset 0px 0px 15px #fff,
+                    -5px 0px 15px #f0f,
+                    5px 0px 15px #0ff,
+                    0px -5px 15px #f0f,
+                    0px 5px 15px #0ff;
+    }
+    .demo6{
+        width: 50px;
+        height: 50px;
+        left: 200px;
+        top: 350px;
+        border-radius: 50%;
+        background-color: #fff;
+        box-shadow: 0px 0px 80px 32px #fff,
+                    0px 0px 90px 60px #ff0;
+    }
+    .demo7{
+        left: 80px;
+        top: 600px;
+        width: 300px;
+        height: 300px;
+        background-color: #fff;
+    }
+    .item{
+        left: 80px;
+        top: 80px;
+        background-color: #fff;
+        box-shadow: 0px 1px 2px rgba(0, 0, 0,.1);
+        border-radius: 5px;
+        transition: all .6s;
+    }
+    .item::after{
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+        opacity: 0;
+        transition: all .6s;
+    }
+    .item:hover{
+        transform: scale(1.25,1.25);
+    }
+    .item:hover::after{
+        opacity: 1;
+    }
+</style>
+<body>
+    <div class="demo3"></div>
+    <div class="demo4"></div>
+    <div class="demo5"></div>
+    <div class="demo6"></div>
+    <div class="demo7">
+        <div class="item"></div>
+    </div>
+</body>
+</html>

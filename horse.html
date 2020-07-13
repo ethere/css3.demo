@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>马奔跑</title>
+</head>
+<style>
+    .demo{
+        width:185px ;
+        height: 100px;
+        /* overflow: hidden; */
+        border: 1px solid;
+    }
+    @keyframes horse-run{
+        0%{
+            margin-left: 0;
+        }
+        9%{
+            margin-left: -205px;
+        }
+        18%{
+            margin-left: -405px;
+        }
+        27%{
+            margin-left: -608px;
+        }
+        36%{
+            margin-left: -800px;
+        }
+        45%{
+            margin-left: -1000px;
+        }
+        54%{
+            margin-left: -1200px;
+        }
+        63%{
+            margin-left: -1400px;
+        }
+        72%{
+            margin-left: -1600px;
+        }
+        81%{
+            margin-left: -1800px;
+        }
+        90%{
+            margin-left: -2000px;
+        }
+        100%{
+            margin-left: -2200px;
+        }
+    }
+    .horse{
+        background: url('./img/horse.png') no-repeat;
+        height: 100px;
+        animation: horse-run 1s steps(1,end) infinite;
+    }
+</style>
+<body>
+    <div class="demo">
+        <div class="horse">
+        </div>
+    </div>
+</body>
+</html>
